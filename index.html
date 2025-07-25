@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Store Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Main Menu -->
+    <div id="main-menu">
+        <h1>Grocery Store Manager</h1>
+        <button id="new-game-btn">New Game</button>
+        <div id="save-slots">
+            <h2>Load Game</h2>
+            <div class="save-slot" data-slot="1">
+                <span>Save Slot 1</span>
+                <button class="load-btn" data-slot="1">Load</button>
+                <button class="delete-btn" data-slot="1">Delete</button>
+            </div>
+            <div class="save-slot" data-slot="2">
+                <span>Save Slot 2</span>
+                <button class="load-btn" data-slot="2">Load</button>
+                <button class="delete-btn" data-slot="2">Delete</button>
+            </div>
+            <div class="save-slot" data-slot="3">
+                <span>Save Slot 3</span>
+                <button class="load-btn" data-slot="3">Load</button>
+                <button class="delete-btn" data-slot="3">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Container -->
+    <div id="game-container" style="display: none;">
+        <!-- Top Bar -->
+        <div id="top-bar">
+            <div id="stats">
+                <span>Money: $<span id="money">10000</span></span>
+                <span>Day: <span id="day">1</span></span>
+                <span>Time: <span id="time">08:00</span></span>
+                <span>Swag Points: <span id="swag-points">0</span></span>
+                <span>Rating: <span id="store-rating">N/A</span></span>
+            </div>
+            <div id="game-controls">
+                <button id="pause-btn">Pause</button>
+                <button id="save-game-btn">Save Game</button>
+            </div>
+        </div>
+
+        <!-- Main Game Area -->
+        <div id="game-board"></div>
+
+        <!-- Bottom Controls -->
+        <div id="bottom-bar">
+            <button id="buy-stock-btn">Buy Stock</button>
+            <button id="hire-staff-btn">Hire Staff</button>
+            <button id="manage-finances-btn">Finances</button>
+            <button id="store-upgrades-btn">Upgrades</button>
+        </div>
+    </div>
+
+    <!-- Modals -->
+
+    <!-- Buy Stock Modal -->
+    <div id="buy-stock-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h2>Buy Stock</h2>
+            <div id="stock-items"></div>
+        </div>
+    </div>
+
+    <!-- Hire Staff Modal -->
+    <div id="hire-staff-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h2>Hire Staff</h2>
+            <div id="staff-candidates"></div>
+        </div>
+    </div>
+
+    <!-- Finances Modal -->
+    <div id="finances-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h2>Finances</h2>
+            <p>Loans, expenses, and financial summary.</p>
+            <button id="take-loan-btn">Take a Loan</button>
+        </div>
+    </div>
+    
+    <!-- Upgrades Modal -->
+    <div id="upgrades-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h2>Store Upgrades</h2>
+            <div id="upgrade-options"></div>
+        </div>
+    </div>
+
+    <!-- Event Modal -->
+    <div id="event-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h2 id="event-title"></h2>
+            <p id="event-message"></p>
+        </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div id="game-over-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Game Over</h2>
+            <p>You've gone bankrupt!</p>
+            <button id="restart-game-btn">Restart</button>
+        </div>
+    </div>
+    
+    <!-- Save Game Modal -->
+    <div id="save-game-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <h2>Save Game</h2>
+            <div id="save-game-slots">
+                <button class="save-slot-btn" data-slot="1">Save to Slot 1</button>
+                <button class="save-slot-btn" data-slot="2">Save to Slot 2</button>
+                <button class="save-slot-btn" data-slot="3">Save to Slot 3</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
