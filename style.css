@@ -1,0 +1,173 @@
+/* General Styles */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --background-color: #ecf0f1;
+    --font-color: #34495e;
+    --light-gray: #bdc3c7;
+    --dark-gray: #7f8c8d;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--font-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1, h2 {
+    color: var(--secondary-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Main Menu */
+#main-menu {
+    text-align: center;
+}
+
+#save-slots {
+    margin-top: 20px;
+}
+
+.save-slot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+/* Game Container */
+#game-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#top-bar, #bottom-bar {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#stats span {
+    margin-right: 20px;
+}
+
+#game-board {
+    flex-grow: 1;
+    background-color: #f2f2f2;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    gap: 1px;
+    border: 2px solid var(--secondary-color);
+}
+
+/* Game Objects */
+.tile {
+    background-color: #ecf0f1;
+}
+
+.wall {
+    background-color: var(--dark-gray);
+}
+
+.shelf {
+    background-color: #d2b48c;
+}
+
+.counter {
+    background-color: #8b4513;
+}
+
+.fridge {
+    background-color: #aed6f1;
+}
+
+.customer {
+    background-color: #f1c40f;
+    border-radius: 50%;
+}
+
+.karen {
+    background-color: var(--error-color);
+    border-radius: 50%;
+}
+
+.employee {
+    background-color: var(--success-color);
+    border-radius: 50%;
+}
+
+/* Modals */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#stock-items, #staff-candidates, #upgrade-options {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.item, .candidate, .upgrade {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid var(--light-gray);
+}
